@@ -245,6 +245,30 @@ function uploadAudioRecording(blob) {
                console.log("resulturl:"+resultUrl)
                
                resetView();
+
+            
+              function resetView() {
+                var statement = data.Payload;
+                var str = data.Payload;
+                var matches = str.match(/(\d+)/);
+                  
+                var mat = matches[0]
+                document.getElementById('ExtractNumber').innerHTML = "Extracted Number :- "+mat ;
+                //document.getElementById('Statement').innerHTML = "Recorded Statement :- Input: "+statement;
+
+                //for statement print
+                var src_str = str;
+                var str_spl = src_str.split(".");
+                var num;
+                var display_split_strings = 'Recorded statement: input:-';
+
+                for (num=0; num < str_spl.length; num++){
+                    display_split_strings += str_spl[num] + "<BR>";
+                    }
+                     document.getElementById("Statement").innerHTML = display_split_strings;
+                   }
+
+
                /*document.getElementById('audio-output').innerHTML = '<audio controls autoplay><source src="' + resultUrl + '" type="audio/mpeg"></audio><br/>';*/
              }
           });
