@@ -248,7 +248,7 @@ function uploadAudioRecording(blob) {
 
             
               function resetView() {
-                var statement = data.Payload;
+                // var statement = data.Payload;
                 var str = data.Payload;
                 var matches = str.match(/(\d+)/);
                   
